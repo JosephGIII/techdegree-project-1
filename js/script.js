@@ -58,7 +58,13 @@ var quotes = [
 /***
  * `getRandomQuote` function
 ***/
-
+function getRandomQuote(array) {
+  var randomQuote = Math.floor(Math.random() * quotes.length);
+  for (var i = 0; i < array.length; i++) {
+      var printQuote = array[randomQuote];
+  }
+  return printQuote;
+}
 
 
 /***
