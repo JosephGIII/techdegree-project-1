@@ -74,14 +74,15 @@ function printQuote() {
     htmlString += '<span class="citation">' + result.citation + '</span>';
   }
   if (result.year) {
-    htmlString += '<span class="year">' + result.year + '</span></p>';
+    htmlString += '<span class="year">' + result.year + '</span>';
   }
+  htmlString += '</p>';
   document.getElementById('quote-box').innerHTML = htmlString; 
 }
 
 
 /*
-An event listener to calls the "printQuote" function once
+An event listener that calls the "printQuote" function once
 the user clicks the "Show another quote" button.
 */
 
