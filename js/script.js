@@ -70,7 +70,18 @@ function getRandomQuote(array) {
 /***
  * `printQuote` function
 ***/
-
+function printQuote() {
+  var result = getRandomQuote(quotes);
+  var htmlString = '<p class="quote">' + result.quote + '</p>';
+  htmlString += '<p class="source">' + result.source;
+  if (result.citation) {
+    htmlString += '<span class="citation">' + result.citation + '</span>';
+  }
+  if (result.year) {
+    htmlString += '<span class="year">' + result.year + '</span></p>';
+  }
+  document.getElementById('quote-box').innerHTML = htmlString; 
+}
 
 
 /***
