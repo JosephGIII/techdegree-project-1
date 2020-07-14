@@ -3,13 +3,7 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
-/*** 
- * `quotes` array 
-***/
+//Created an array of quote objects
 var quotes = [
   {
     quote: 'What we have once enjoyed we can never lose. All that we love deeply becomes a part of us.',
@@ -55,9 +49,10 @@ var quotes = [
   }
 ];
 
-/***
- * `getRandomQuote` function
-***/
+/*
+Created a "getRandomQuote" function that creates a random number
+to return a random quote object from the "quotes" array.
+*/
 function getRandomQuote(array) {
   var randomQuote = Math.floor(Math.random() * quotes.length);
   for (var i = 0; i < array.length; i++) {
@@ -67,9 +62,10 @@ function getRandomQuote(array) {
 }
 
 
-/***
- * `printQuote` function
-***/
+/*
+Created a "printQuote" function that displays a new quote
+each time the user clicks the "Show another quote" button.
+*/
 function printQuote() {
   var result = getRandomQuote(quotes);
   var htmlString = '<p class="quote">' + result.quote + '</p>';
@@ -84,9 +80,9 @@ function printQuote() {
 }
 
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
+/*
+An event listener to calls the "printQuote" function once
+the user clicks the "Show another quote" button.
+*/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
