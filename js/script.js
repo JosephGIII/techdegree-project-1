@@ -66,18 +66,19 @@ function getRandomQuote(array) {
 Created a "printQuote" function that displays a new quote
 each time the user clicks the "Show another quote" button.
 */
-function printQuote() {
-  var result = getRandomQuote(quotes);
-  var htmlString = '<p class="quote">' + result.quote + '</p>';
-  htmlString += '<p class="source">' + result.source;
-  if (result.citation) {
-    htmlString += '<span class="citation">' + result.citation + '</span>';
+function printQuote() {
+  var result = getRandomQuote(quotes);
+  var htmlString = '<p class="quote">' + result.quote + '</p>';
+  var htmlStringSource = '<p class="source">' + result.source;
+  if (result.citation) {
+    htmlStringSource += '<span class="citation">' + result.citation + '</span>';
   }
-  if (result.year) {
-    htmlString += '<span class="year">' + result.year + '</span>';
+  if (result.year) {
+    htmlStringSource += '<span class="year">' + result.year + '</span>';
   }
   htmlString += '</p>';
-  document.getElementById('quote-box').innerHTML = htmlString; 
+  var htmlQuoteBox = htmlString + htmlStringSource;
+  document.getElementById('quote-box').innerHTML = htmlQuoteBox;
 }
 
 
